@@ -7,12 +7,11 @@ import Swal from 'sweetalert2';
   standalone: true,
 })
 export class AddtocartDirective {
-  // @Input() product: Product|null;
   constructor() {}
   @HostListener('click') onClick() {
     Swal.fire({
-      title: 'nice',
-      text: 'The product added to the cart!',
+      title: 'პროდუქტი დაემატა კალათაში!',
+      text: '',
       icon: 'success',
     });
   }

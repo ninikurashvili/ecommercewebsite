@@ -1,6 +1,6 @@
 <section class="container-fluid w-100">
   <form
-    class=" singup p-4 shadow rounded border w-50 m-5"
+    class="singup p-4 shadow rounded border w-50 m-5"
     #form="ngForm"
     [formGroup]="singupForm"
   >
@@ -86,6 +86,7 @@
       }
     </div>
     <button
+      appAdduser
       class="btn"
       [ngClass]="{
         'btn-danger': !form.valid,

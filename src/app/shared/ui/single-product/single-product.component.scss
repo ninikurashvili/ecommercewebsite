@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     .proimg{
-        // width: 160px;
+      
       
      object-fit:contain;   
     height:500px;
@@ -10,10 +10,9 @@
      
      .carousel-control-prev-icon:hover,
      .carousel-control-next-icon:hover {
-       background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+       background-color: rgba(0, 0, 0, 0.7); 
        border-radius: 50%;
-    //    border-width: 2px;
-    //    background-image: url('/src/assets/images/next.svg') ;
+    
      }
      .price{
         display: flex;
@@ -32,16 +31,19 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         
-     }}
+     }
+    button.btn{
+            background-color: #f28f6a;
+            border: #f28f6a;
+    }
+    }
      @media (max-width: 769px) {
         .contain{
             display: grid;
             grid-template-columns: 1fr ;
             .proimg{
-                // width: 160px;
-              
              object-fit:contain;   
-            height:300px;
+             height:300px;
              }
         }
         

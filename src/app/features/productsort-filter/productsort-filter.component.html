@@ -2,7 +2,7 @@
   <section>
     <section>
       <div class="form-group">
-        <label for="minPrice">Min Price</label>
+        <label for="minPrice">მინიმალური</label>
         <input
           type="number"
           id="minPrice"
@@ -11,7 +11,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="maxPrice">Max Price</label>
+        <label for="maxPrice">მაქსიმალური</label>
         <input
           type="number"
           id="maxPrice"
@@ -20,7 +20,8 @@
         />
       </div>
     </section>
-    <section class="m-5">
+    <section class="mt-5 mb-3">
+      <h5>ბრენდები</h5>
       <ng-container *ngFor="let brand of brandNames; let index = index">
         <input
           type="radio"
@@ -49,7 +50,7 @@
       </ng-container>
     </ng-container>
     <ng-template #noProducts>
-      <p>No products available.</p>
+      <p class="m-5">პროდუქტები არ არის ხელმისაწვდომი.</p>
     </ng-template>
   </section>
 </section>

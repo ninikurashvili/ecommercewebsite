@@ -8,11 +8,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { AdduserDirective } from '../../directives/adduser.directive';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgClass],
+  imports: [FormsModule, ReactiveFormsModule, NgClass, AdduserDirective],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })

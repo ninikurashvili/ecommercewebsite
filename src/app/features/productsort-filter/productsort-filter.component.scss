@@ -1,6 +1,10 @@
 .contain{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    button.btn{
+        background-color: #f28f6a;
+        border: #f28f6a;
+    }
     .productrow{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr ;
@@ -8,3 +12,10 @@
       
     }
 }
+
+@media (max-width: 769px) {
+    .productrow{
+      display: grid;
+      grid-template-columns: repeat(2,1fr) !important;
+    }
+  }
