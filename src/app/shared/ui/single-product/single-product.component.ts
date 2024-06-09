@@ -32,7 +32,6 @@ export default class SingleProductComponent {
   singleProduct: Product | null = null;
 
   constructor(private sharedService: SharedService) {
-    console.log(this.activedRoute);
     this.router.events
       .pipe(
         takeUntilDestroyed(),

@@ -104,11 +104,11 @@ export default class ProductsortFilterComponent implements OnInit, OnDestroy {
     if (this.allProductsByCategory.length > 0) {
       this.maxPrice = Math.max(
         ...this.allProductsByCategory.map((product) => {
-          return Number((product.price * (2.6)).toFixed(2));
+          return Number((product.price * 2.6).toFixed(2));
         }),
       );
     } else {
-      this.maxPrice = 0; // Handle case where there are no products
+      this.maxPrice = 0;
     }
   }
 
@@ -129,34 +129,27 @@ export default class ProductsortFilterComponent implements OnInit, OnDestroy {
   }
 
   applyFilter(): void {
-    // Filter by brand if selected
     const brandFilteredProducts = this.selectedBrand
       ? this.filterByBrand(this.allProductsByCategory, this.selectedBrand)
       : this.allProductsByCategory;
 
-    // Filter by price if min or max price are set
     this.productsByCategory = this.filterProducts(brandFilteredProducts);
-
-    console.log(this.productsByCategory);
   }
 
   sortByBrand(brand: string): void {
-    console.log('Selected brand:', brand);
     this.selectedBrand = brand;
 
-    // Filter by brand first, then apply price filter
     const brandFilteredProducts = this.filterByBrand(
       this.allProductsByCategory,
       brand,
     );
 
     this.productsByCategory = this.filterProducts(brandFilteredProducts);
-    console.log(this.productsByCategory);
   }
 
   reset(): void {
     this.minPrice = 0;
-    this.setDefaultMaxPrice(); // Call the method to set maxPrice directly
+    this.setDefaultMaxPrice();
     this.selectedBrand = null;
     this.productsByCategory = [...this.allProductsByCategory];
     this.filteredProducts = [];

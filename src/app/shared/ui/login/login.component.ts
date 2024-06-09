@@ -30,7 +30,6 @@ export class LoginComponent {
 
   onSubmit(): void {
     const { email, password } = this.loginForm.value;
-
     if (!email || !password) {
       console.error('Form is invalid');
       return;
