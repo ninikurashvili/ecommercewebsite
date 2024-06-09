@@ -1,0 +1,33 @@
+section{
+
+   .subOrSin{
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+    a{
+        text-decoration: none;
+       }
+        }
+  
+
+}
+
+@media (max-width: 769px) {
+    section{
+        margin: 0 !important;
+ form{
+   margin: 5px !important;
+   width: 100% !important;
+ }
+}}
+@media (max-width: 769px) {
+    section{
+        margin: 0 !important;
+ form{
+   margin: 5px !important;
+   width: 100% !important;
+   .subOrSin{
+    flex-direction: column;
+   }
+ }
+}}

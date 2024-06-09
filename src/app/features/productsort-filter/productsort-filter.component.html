@@ -1,0 +1,55 @@
+<section class="contain">
+  <section>
+    <section>
+      <div class="form-group">
+        <label for="minPrice">Min Price</label>
+        <input
+          type="number"
+          id="minPrice"
+          class="form-control"
+          [(ngModel)]="minPrice"
+        />
+      </div>
+      <div class="form-group">
+        <label for="maxPrice">Max Price</label>
+        <input
+          type="number"
+          id="maxPrice"
+          class="form-control"
+          [(ngModel)]="maxPrice"
+        />
+      </div>
+    </section>
+    <section class="m-5">
+      <ng-container *ngFor="let brand of brandNames; let index = index">
+        <input
+          type="radio"
+          [id]="'brand' + index"
+          name="brandGroup"
+          [value]="brand"
+          [(ngModel)]="selectedBrand"
+          (change)="sortByBrand(brand)"
+        />
+        <label [for]="'brand' + index">{{ brand }}</label
+        ><br />
+      </ng-container>
+    </section>
+    <button class="btn btn-primary m-2" (click)="applyFilter()">
+      Apply Filter
+    </button>
+    <button class="btn btn-primary m-2" (click)="reset()">Reset</button>
+  </section>
+
+  <section class="productrow">
+    <ng-container *ngIf="productsByCategory.length; else noProducts">
+      <ng-container
+        *ngFor="let product of productsByCategory; trackBy: trackByProductId"
+      >
+        <app-product-display [productToDisplay]="product"></app-product-display>
+      </ng-container>
+    </ng-container>
+    <ng-template #noProducts>
+      <p>No products available.</p>
+    </ng-template>
+  </section>
+</section>

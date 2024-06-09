@@ -1,0 +1,98 @@
+@if (singleProduct) {
+  <div class="contain">
+    <div
+      id="carouselExampleIndicators{{ singleProduct.id }}"
+      class="carousel slide item-2 m-4"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            class="proimg d-block w-100"
+            [src]="singleProduct.images[0]"
+            alt="First slide"
+          />
+        </div>
+        <div class="carousel-item" *ngIf="singleProduct?.images?.[1]">
+          <img
+            class="proimg d-block w-100"
+            [src]="singleProduct.images[1]"
+            alt="Second slide"
+          />
+        </div>
+        <div class="carousel-item" *ngIf="singleProduct?.images?.[2]">
+          <img
+            class="proimg d-block w-100"
+            [src]="singleProduct.images[2]"
+            alt="Third slide"
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators{{ singleProduct.id }}"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators{{ singleProduct.id }}"
+        role="button"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+
+    <div class="singleProduct-details mt-5">
+      <h1>{{ singleProduct.title }}</h1>
+      <p class="description mt-4">{{ singleProduct.description }}</p>
+      <div class="info mt-4">
+        @if (singleProduct && singleProduct.discountPercentage > 15) {
+          <div class="price">
+            <h4 class="newprice">
+              {{
+                calculateDiscountedPrice(
+                  singleProduct.price,
+                  singleProduct.discountPercentage
+                ) | convertprice
+              }}
+            </h4>
+            <span class="oldprice">{{
+              singleProduct.price | convertprice
+            }}</span>
+          </div>
+        } @else {
+          <div class="price">
+            <h4 class="newprice">
+              {{ singleProduct.price | convertprice }}
+            </h4>
+          </div>
+        }
+        <div class="otherinfo mt-4">
+          <p class="rating">
+            <strong>Rating:</strong> {{ singleProduct.rating }} / 5
+          </p>
+          <p class="stock"><strong>Stock:</strong> {{ singleProduct.stock }}</p>
+          <p class="brand"><strong>Brand:</strong> {{ singleProduct.brand }}</p>
+          <p class="weight">
+            <strong>Weight:</strong> {{ singleProduct.weight }}
+          </p>
+          <div class="dimensions">
+            <strong>Dimensions:</strong>
+            <p>Width: {{ singleProduct.dimensions.width }} cm</p>
+            <p>Height: {{ singleProduct.dimensions.height }} cm</p>
+            <p>Depth: {{ singleProduct.dimensions.depth }} cm</p>
+          </div>
+        </div>
+        <button appAddtocart class="btn btn-warning" (click)="addToCart() ">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+}

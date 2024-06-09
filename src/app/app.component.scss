@@ -1,0 +1,35 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  .navbar{
+    width: 100%;
+    padding:0px 50px;
+    display: flex;
+    justify-content: space-between;
+    div.container-fluid {
+        a {
+          
+          &.active {
+            color: #ec5e2a;
+          }
+        }
+      }
+  }
+}
+@media (max-width: 769px) {
+   header{
+    .navbar{
+        padding: 0px 25px;
+    }
+   }
+  }
+
+  
+  

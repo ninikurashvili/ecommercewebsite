@@ -1,0 +1,28 @@
+<section class="wholecart m-5">
+  <div class="item-1">
+    @for (product of products; track product.id) {
+      <app-cartproduct [productOfCart]="product"></app-cartproduct>
+    }
+  </div>
+  <section class="pricecard item-2">
+    <div class="shadow p-2 mb-5 bg-white rounded">
+      <div class="d-flex flex-row justify-content-between m-4">
+        <h6>ღირებულება</h6>
+        <h6>{{ priceToPay | convertprice }}</h6>
+      </div>
+      <div class="d-flex flex-row justify-content-between m-4">
+        <h6>მიწოდების ღირებულება</h6>
+        <h6>{{ 0 | convertprice }}</h6>
+      </div>
+    </div>
+    <div class="shadow p-2 mb-5 bg-white rounded">
+      <div class="d-flex flex-row justify-content-between m-4">
+        <h6>გადასახდელი თანხა</h6>
+        <h6>{{ priceToPay | convertprice }}</h6>
+      </div>
+      <div class="d-grid text-center m-4">
+        <button class="btn btn-success align-center">ყიდვა</button>
+      </div>
+    </div>
+  </section>
+</section>

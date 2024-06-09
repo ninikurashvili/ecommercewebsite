@@ -1,0 +1,109 @@
+<section class="banner">
+  <div class="custom-dropdown item-1">
+    <h6 class="custom-dropdown-header">პროდუქტები</h6>
+    <a class="custom-dropdown-item" [routerLink]="['/category', 'smartphones']"
+      >სმარტფონები</a
+    >
+    <a class="custom-dropdown-item" [routerLink]="['/category', 'tablets']"
+      >ტაბლეტები</a
+    >
+    <a class="custom-dropdown-item" [routerLink]="['/category', 'laptops']"
+      >ლეპტობები</a
+    >
+    <a
+      class="custom-dropdown-item"
+      [routerLink]="['/category', 'mobile-accessories']"
+      >აქსესუარები</a
+    >
+  </div>
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide item-2"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          class="d-block w-100"
+          src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2Fbf8d88bf-c1e6-4074-bb7d-dd3690cfd11b_Thumb.jpeg&w=3840&q=75"
+          alt="First slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2Ffd6a89cc-8f6a-4b16-b252-bcfa7868fbd7_Thumb.jpeg&w=3840&q=75"
+          alt="Third slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2Fa61c1824-8082-442a-8e20-4211427797b4_Thumb.jpeg&w=3840&q=75"
+          alt="Second slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2F7c0d5fb9-786b-4d44-b748-2094e8ebedd8_Thumb.jpeg&w=3840&q=75"
+          alt="Third slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="https://zoommer.ge/_next/image?url=https%3A%2F%2Fs3.zoommer.ge%2Fsite%2F52cb6e0f-f373-4cf3-b51b-dbcb7a5acb57_Thumb.jpeg&w=3840&q=75"
+          alt="Third slide"
+        />
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+</section>
+<div class="title-1"><h4>სულსწრაფი შეთავაზებები</h4></div>
+<section class="productrow">
+  @if (products.length != 0) {
+    @for (product of products; track product.id) {
+      @if (product.discountPercentage > 15 && product.id != 126) {
+        <app-product-display [productToDisplay]="product"></app-product-display>
+      }
+    }
+  }
+</section>
+
+<!-- <div class="title-1">
+    <h5>ბრენდები</h5>
+    <ng-container *ngFor="let brand of brands">
+      <h6>{{ brand.name }}</h6>
+      <section class="productrow">
+        <ng-container *ngIf="brand.products && brand.products.length">
+          <ng-container
+            *ngFor="let product of brand.products; trackBy: trackById"
+          >
+            <app-product-display
+              [productToDisplay]="product"
+            ></app-product-display>
+          </ng-container>
+        </ng-container>
+      </section>
+    </ng-container>
+  </div>
+   -->

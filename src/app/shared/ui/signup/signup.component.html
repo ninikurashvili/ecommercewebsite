@@ -1,0 +1,100 @@
+<section class="container-fluid w-100">
+  <form
+    class=" singup p-4 shadow rounded border w-50 m-5"
+    #form="ngForm"
+    [formGroup]="singupForm"
+  >
+    <div class="mb-3">
+      <div>
+        <label for="name" class="form-label">სახელი/გვარი</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="შეიყვანე სახელი/გვარი"
+          class="form-control"
+          formControlName="name"
+          [ngClass]="{
+            'is-invalid':
+              !singupForm.controls['name'].valid &&
+              singupForm.controls['name'].touched,
+            'is-valid': singupForm.controls['name'].valid,
+          }"
+        />
+      </div>
+      @if (singupForm.controls["name"].valid) {
+        <div class="valid-feedback">კარგია!</div>
+      } @else if (
+        !singupForm.controls["name"].valid &&
+        singupForm.controls["name"].touched
+      ) {
+        <div class="invalid-feedback">შეიყვანე მხოლოდ ასოები (2-40)</div>
+      }
+    </div>
+    <div class="mb-3">
+      <div>
+        <label for="email" class="form-label">ელ-ფოსტა</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="შეიყვანე ელ-ფოსტა"
+          class="form-control"
+          formControlName="email"
+          [ngClass]="{
+            'is-invalid':
+              !singupForm.controls['email'].valid &&
+              singupForm.controls['email'].touched,
+            'is-valid': singupForm.controls['email'].valid,
+          }"
+        />
+      </div>
+      @if (singupForm.controls["email"].valid) {
+        <div class="valid-feedback">კარგია!</div>
+      } @else if (
+        !singupForm.controls["email"].valid &&
+        singupForm.controls["email"].touched
+      ) {
+        <div class="invalid-feedback">შეიყვანე სწორი ელ-ფოსტა</div>
+      }
+    </div>
+    <div class="mb-3">
+      <div>
+        <label for="phone" class="form-label">პაროლი</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="შეიყვანე პაროლი"
+          class="form-control"
+          formControlName="password"
+          [ngClass]="{
+            'is-invalid':
+              !singupForm.controls['password'].valid &&
+              singupForm.controls['password'].touched,
+            'is-valid': singupForm.controls['password'].valid,
+          }"
+        />
+      </div>
+      @if (singupForm.controls["password"].valid) {
+        <div class="valid-feedback">კარგია!</div>
+      } @else if (
+        !singupForm.controls["password"].valid &&
+        singupForm.controls["password"].touched
+      ) {
+        <div class="invalid-feedback">შეიყვანე სწორად პაროლი</div>
+      }
+    </div>
+    <button
+      class="btn"
+      [ngClass]="{
+        'btn-danger': !form.valid,
+        'btn-success': form.valid,
+      }"
+      [disabled]="!form.valid"
+      (click)="onSubmit()"
+    >
+      დადასტურება
+    </button>
+  </form>
+</section>

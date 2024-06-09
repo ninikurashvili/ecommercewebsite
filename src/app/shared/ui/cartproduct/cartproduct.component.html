@@ -1,0 +1,44 @@
+@if (productOfCart) {
+  <div class="contain shadow p-2 mb-5 bg-white rounded">
+    <a [routerLink]="['/single-product', productOfCart.id]">
+      <div>
+        <img
+          class="proimg d-block w-100"
+          [src]="productOfCart.images[0]"
+          alt="First slide"
+        />
+      </div>
+    </a>
+
+    <div class="info">
+      <a
+        title="techdescription"
+        class="description"
+        [routerLink]="['/single-product', productOfCart.id]"
+      >
+        <h6>{{ productOfCart.title }}</h6>
+
+        @if (productOfCart && productOfCart.discountPercentage > 15) {
+          <span class="newprice"
+            >ფასდაკლებული ფასი:
+            {{
+              calculateDiscountedPrice(
+                productOfCart.price,
+                productOfCart.discountPercentage
+              ) | convertprice
+            }}</span
+          >
+        } @else {
+          <span class="newprice">
+            {{ productOfCart.price | convertprice }}
+          </span>
+        }
+      </a>
+      <div class="d-flex justify-content-end mt-3">
+        <button class="btn btn-success" (click)="removeFromCart()">
+          წაშლა
+        </button>
+      </div>
+    </div>
+  </div>
+}

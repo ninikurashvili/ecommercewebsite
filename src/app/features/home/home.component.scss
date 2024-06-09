@@ -1,0 +1,83 @@
+section.banner{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-dropdown-toggle {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .custom-dropdown-menu.show {
+    display: block;
+  }
+  
+  .custom-dropdown-header {
+    padding: 8px 16px;
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .custom-dropdown-item {
+    padding: 8px 16px;
+    display: block;
+    color: #212529;
+    text-decoration: none;
+  }
+  
+  .custom-dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #16181b;
+  }
+  
+
+}
+.title-1{
+  color: #ec5e2a;;
+  opacity: 0.8;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 3rem 3rem 3rem 1rem;
+}
+.productrow{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+@media (max-width: 769px) {
+    section.banner{
+        display: grid;
+    grid-template-columns: 1fr;
+.item-2{
+grid-row: 1;
+}
+.item-1{
+    grid-row: 2;
+}
+
+    }
+    .productrow{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+  }

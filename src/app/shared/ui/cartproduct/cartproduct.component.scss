@@ -1,0 +1,21 @@
+
+.contain{
+    display: grid;
+   grid-template-columns: 1fr 2fr;
+    height: 150px;
+    .proimg{
+        // width: 160px;
+      
+     object-fit:contain;   
+    height:100px;
+     }
+     .info{
+        margin-right: 2rem;
+     a{
+        text-decoration: none;
+        color: black;
+     }
+    //  button.btn{
+    //     margin-right: 150px;
+    //  }
+}}

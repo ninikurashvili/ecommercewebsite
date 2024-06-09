@@ -1,0 +1,41 @@
+.wholecart{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:60px;
+    .pricecard{
+       
+        width: 70%;
+
+        button.btn{
+            background-color:  #ec5e2a;
+            border: #ec5e2a;
+        }
+    }
+
+}
+
+@media (max-width: 769px) {
+    .wholecart{
+        display: grid;
+    grid-template-columns: 1fr;
+  
+.item-2{
+grid-row: 1;
+font-size: 10px;
+}
+.item-1{
+    grid-row: 2;
+
+}
+.pricecard{
+    width: 100%;
+}
+    
+    
+  }}
+
+  
+@media (max-width: 375px) {
+    .wholecart{
+     margin:0 !important
+  }}
