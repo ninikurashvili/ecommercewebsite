@@ -17,7 +17,6 @@ import { Product } from '../../shared/interfaces';
 export default class HomeComponent implements OnInit {
   private readonly productService = inject(ProductService);
   readonly products: Product[] = [];
-
   readonly apple: Product[] = [];
   readonly oppo: Product[] = [];
   readonly samsung: Product[] = [];
